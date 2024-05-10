@@ -1,0 +1,24 @@
+.card-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header-container, .button-container{
+  display:flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+.card{
+  padding:20px;
+  margin: 20px;
+}
+
+.header{
+  padding: 10px;
+}
+
+#username-header{
+  border-bottom: 1px solid black;
+}
