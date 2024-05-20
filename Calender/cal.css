@@ -1,107 +1,152 @@
 .cal {
-    display: flex;
-    font-family: "Source Sans Pro";
+  display: flex;
+  font-family: "Source Sans Pro";
+}
+
+.aside {
+  width: 200px;
+  @media (max-width: 760px) {
+    display: none;
   }
-  
-  .aside {
-    width: 200px;
-    background-color: #E1AFD1;
-  }
-  .main {
-    width: calc(100% - 200px);
+}
+.main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 2rem;
+  .main-header {
     display: flex;
-    flex-direction: column;
+    width: 100%;
+    position: relative;
+    font-size: 26px;
+    margin-bottom: 3rem;
     justify-content: center;
     align-items: center;
-    background-color: #FFE6E6;
-    .main-header {
-      font-size: 26px;
-      margin-bottom: 60px;
-    }
-    .main-body {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-    }
-    .day-row,
-    .date-row {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-    }
-    .cell {
+    gap: 8px;
+    .display-header {
+      width: 200px;
       text-align: center;
-      font-family: "Source Sans Pro";
-      color: #5a5a5a;
-      border-collapse: collapse;
-      font-size: 20px;
-      user-select: none;
-      box-sizing: border-box;
-      position: relative;
-      padding: 15px;
-      height: 60px;
-      width: 60px;
-      margin: 0 auto;
-      border-radius: 50%;
-      text-align: center;
-      border: 1px solid transparent;
-      transition: all 0.3s ease, transform 0.5s ease;
+    }
+    .today-button {
+      position: absolute;
+      top: 0;
+      right: 120px;
+      border: 1px solid #0f0f0f;
+      background-color: white;
+      outline: none;
+      padding: 4px 8px;
+      font-size: 22px;
+      border-radius: 8px;
       cursor: pointer;
       &:hover {
         background-color: #dadada;
+        color: red;
+        border-color: red;
+      }
+      @media (max-width: 760px) {
+        display: none;
       }
     }
-    .cell-header {
-    }
   }
-  .aside-header {
+  .main-body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    font-size: 30px;
-    gap: 8px;
-    button {
-      box-sizing: border-box;
-      border: none;
-      background-color: transparent;
-      padding: 0;
-      cursor: pointer;
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      &:hover {
-        color: plum;
-        span {
-          border-color: #FFE6E6;
-        }
-      }
-      span {
-        cursor: pointer;
-        box-sizing: border-box;
-        display: block;
-        transform: rotate(-45deg);
-        width: 100%;
-        height: 100%;
-      }
+    flex-direction: column;
+    width: 100%;
+  }
+  .day-row,
+  .date-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .cell {
+    text-align: center;
+    font-family: "Source Sans Pro";
+    color: #5a5a5a;
+    border-collapse: collapse;
+    font-size: 20px;
+    user-select: none;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease, transform 0.5s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: #dadada;
+      color: red;
     }
-    .prev-button span {
-      border-top: 4px solid #000;
-      border-left: 4px solid #000;
-    }
-    .next-button span {
-      border-right: 4px solid #000;
-      border-bottom: 4px solid #000;
+    &.today {
+      background-color: red;
+      color: white;
     }
   }
-  
-  .aside-body {
-    .aside-month {
-      padding: 10px;
-      cursor: pointer;
-      list-style:none;
-      &:hover {
-        color: #FFE6E6;
-      }
+  .cell-header {
+  }
+}
+.aside-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 30px;
+  gap: 8px;
+}
+
+.aside-body {
+  list-style-type: none;
+  padding: 30px;
+  .aside-month {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: #dadada;
+      color: red;
+    }
+
+    &.display-month {
+      background-color: red;
+      color: white;
     }
   }
+}
+
+.direction-button {
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  &:hover {
+    color: red;
+    span {
+      border-color: red;
+    }
+  }
+  span {
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 100%;
+  }
+}
+.prev-button span {
+  border-top: 4px solid #000;
+  border-left: 4px solid #000;
+}
+.next-button span {
+  border-right: 4px solid #000;
+  border-bottom: 4px solid #000;
+}
