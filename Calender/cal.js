@@ -1,8 +1,17 @@
-!(function (containerSelector) {
+(function (containerSelector) {
   const $ = (selector) => document.querySelector(selector);
   const newElement = (tag) => document.createElement(tag);
   const app = $(containerSelector);
   const cal = newElement("div");
+
+  /**** DARK MODE ***/
+  const darkModeButton = newElement("button");
+  darkModeButton.classList.add("dark-mode-toggle");
+  darkModeButton.innerHTML = "Toggle Dark Mode";
+  darkModeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+  app.appendChild(darkModeButton);
 
   const strMonth = [
     "January",
@@ -21,6 +30,7 @@
   const strDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   let displayDate = new Date();
+  let notes = {};
 
   function initAside() {
     const aside = newElement("div");
@@ -236,7 +246,6 @@
         }
         dateRow.appendChild(cell);
       });
-
       body.appendChild(dateRow);
     }
   }

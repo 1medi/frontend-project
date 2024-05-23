@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .card-container{
   display:flex;
   flex-direction: row;
@@ -9,6 +11,10 @@ flex-direction: column;
 align-items: center;
 }
 
+.utilities-container{
+  display: flex;
+  flex-direction: row;
+}
 
 .card{
   padding:20px;
@@ -22,3 +28,248 @@ align-items: center;
 #username-header{
   border-bottom: 1px solid black;
 }
+
+.clock {
+  position: absolute;
+  top: 75px;
+  left: 250px;
+  transform: translateX(-50%) translateY(-50%);
+  color: #17D4FE;
+  font-size: 60px;
+  font-family: "Montserrat", "Sans-serif";
+  letter-spacing: 7px;
+  font-weight: bold;
+}
+
+#MyClockDisplay {
+  position: absolute;
+  margin: auto;
+}
+/***********NOTES********************/
+.input-box{
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  min-height: 150px;
+  background: orange;
+  padding: 30px;
+  margin: 20px 0;
+  outline: none;
+  border-radius: 5px;
+}
+
+#trash{
+  position:relative;
+  z-index: 999;
+  top:50px;
+  left: 5px;
+  cursor: pointer;
+}
+
+/***********CALENDAR*****************/
+.container{
+  margin-left:0 ;
+}
+.cal {
+  display: flex;
+  font-family: "Source Sans Pro";
+}
+
+.aside {
+  width: 200px;
+  @media (max-width: 760px) {
+    display: none;
+  }
+}
+.main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 2rem;
+  .main-header {
+    display: flex;
+    width: 100%;
+    position: relative;
+    font-size: 26px;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    .display-header {
+      width: 200px;
+      text-align: center;
+    }
+    .today-button {
+      position: absolute;
+      top: 0;
+      right: 120px;
+      border: 1px solid #0f0f0f;
+      background-color: white;
+      outline: none;
+      padding: 4px 8px;
+      font-size: 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      &:hover {
+        background-color: #dadada;
+        color: red;
+        border-color: red;
+      }
+      @media (max-width: 760px) {
+        display: none;
+      }
+    }
+  }
+  .main-body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .day-row,
+  .date-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .cell {
+    text-align: center;
+    font-family: "Source Sans Pro";
+    color: #5a5a5a;
+    border-collapse: collapse;
+    font-size: 20px;
+    user-select: none;
+    box-sizing: border-box;
+    position: relative;
+    padding: 15px;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto;
+    border-radius: 50%;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s ease, transform 0.5s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: #dadada;
+      color: red;
+    }
+    &.today {
+      background-color: red;
+      color: white;
+    }
+  }
+  .cell-header {
+  }
+}
+.aside-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 30px;
+  gap: 8px;
+}
+
+.aside-body {
+  list-style-type: none;
+  padding: 30px;
+  .aside-month {
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: #dadada;
+      color: red;
+    }
+
+    &.display-month {
+      background-color: red;
+      color: white;
+    }
+  }
+}
+
+.direction-button {
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  &:hover {
+    color: red;
+    span {
+      border-color: red;
+    }
+  }
+  span {
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 100%;
+  }
+}
+.prev-button span {
+  border-top: 4px solid #000;
+  border-left: 4px solid #000;
+}
+.next-button span {
+  border-right: 4px solid #000;
+  border-bottom: 4px solid #000;
+}
+
+/******************** DARK MODE *****************************
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .aside,
+.dark-mode .main-header,
+.dark-mode .day-row,
+.dark-mode .date-row,
+.dark-mode .aside-header,
+.dark-mode .aside-body,
+.dark-mode .today-button,
+.dark-mode .direction-button {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .today {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+.dark-mode .direction-button {
+  border: none;
+  color: white;
+}
+
+.dark-mode .aside-month.display-month {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+.dark-mode button {
+  background-color: #3c3c3c;
+  color: #e0e0e0;
+}
+
+.dark-mode button:hover {
+  color: #121212;
+}
+
+.dark-mode-toggle{
+  position:relative;
+  padding: 10px;
+  margin: auto;
+}
+

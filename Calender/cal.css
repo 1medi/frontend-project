@@ -150,3 +150,54 @@
   border-right: 4px solid #000;
   border-bottom: 4px solid #000;
 }
+
+/******************** DARK MODE *****************************
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .aside,
+.dark-mode .main-header,
+.dark-mode .day-row,
+.dark-mode .date-row,
+.dark-mode .aside-header,
+.dark-mode .aside-body,
+.dark-mode .today-button,
+.dark-mode .direction-button {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.dark-mode .today {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+.dark-mode .direction-button {
+  border: none;
+  color: white;
+}
+
+.dark-mode .aside-month.display-month {
+  background-color: #bb86fc;
+  color: #121212;
+}
+
+.dark-mode button {
+  background-color: #3c3c3c;
+  color: #e0e0e0;
+}
+
+.dark-mode button:hover {
+  color: #121212;
+}
+
+.dark-mode-toggle{
+  position:relative;
+  padding: 10px;
+  margin: auto;
+}
+
