@@ -362,6 +362,6 @@ createBtn.addEventListener("click", () => {
   let icon = document.createElement("i");
   inputBox.className = "input-box";
   inputBox.setAttribute("contenteditable", "true");
-  icon.className = "fa fa-trash-o fa-lg"; // Correctly setting the class name
-  notesContainer.appendChild(inputBox).appendChild(icon); // Correctly appending the icon
+  icon.className = "fa fa-trash-o fa-lg"; 
+  notesContainer.appendChild(inputBox).appendChild(icon); 
 });
