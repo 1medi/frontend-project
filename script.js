@@ -97,14 +97,14 @@ function toggleClock() {
     digital.style.display = "none";
     //https://www.w3schools.com/jsref/prop_html_innerhtml.asp
     document.getElementById("btn").innerHTML =
-      "Click me to display digital clock";
+      "Digital Clock";
   } else {
     // If digital clock is not displayed, display it in place of analog clock.
     analog.style.display = "none";
     digital.style.display = "block";
     setInterval(displayDigitalTime, 10);
     document.getElementById("btn").innerHTML =
-      "Click me to display analog clock";
+      "Analog clock";
   }
 }
 
@@ -448,7 +448,7 @@ setClock();
 /********* NOTES *********** */
 
 const notesContainer = document.querySelector(".notes-container");
-const createBtn = document.querySelector(".btn");
+const createBtn = document.querySelector(".buddon");
 let notes = document.querySelectorAll(".input-box")
 
 createBtn.addEventListener("click", () => {

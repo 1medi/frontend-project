@@ -30,6 +30,19 @@ align-items: center;
   padding: 10px;
 }
 
+.footer-header{
+
+}
+
+.names{
+  font-size: 10pt;
+}
+
+.content-container{
+  display: flex;
+  flex-direction: column;
+}
+
 #username-header{
   border-bottom: 1px solid black;
 }
