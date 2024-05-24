@@ -4,6 +4,8 @@
 - Calendar
 - Notes
 
+## How To Use 
+
 - Git clone / Download zip
 - Extract
 - Open with live server
