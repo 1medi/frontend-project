@@ -67,7 +67,7 @@ align-items: center;
 .input-box{
   position: relative;
   width: 100%;
-  max-width: 500px;
+  min-width: 500px;
   min-height: 150px;
   background: orange;
   padding: 30px;
@@ -76,12 +76,15 @@ align-items: center;
   border-radius: 5px;
 }
 
+
 #trash{
-  position:relative;
+  position:absolute;
   z-index: 999;
-  top:50px;
-  left: 5px;
+  top:100px;
+  left: 450px;
   cursor: pointer;
+  width: 32px;
+  height: 32px;
 }
 
 /***********CALENDAR*****************/
@@ -300,7 +303,7 @@ align-items: center;
   width: 300px;
   height: 300px;
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%; /* Makes square space into circle */
+  border-radius: 50%; 
   border: 2px solid black;
   position: relative;
   margin-top: 2em;
@@ -308,12 +311,12 @@ align-items: center;
 }
 
 .clock .number {
-  --rotation: 0; /* Variable to be used in transform below */
+  --rotation: 0; 
   position: absolute;
   width: 100%;
   height: 100%;
   text-align: center;
-  transform: rotate(var(--rotation)); /* Rotates number according to variable */
+  transform: rotate(var(--rotation)); 
   font-size: 1.5rem;
 }
 
@@ -362,37 +365,29 @@ align-items: center;
 }
 
 .clock .hand {
-  --rotation: 0; /* This will be updated by JavaScript */
+  --rotation: 0; 
   position: absolute;
   bottom: 50%;
   left: 50%;
   border: 1px solid white;
-  /* These will transform top of hand to look rounded */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: black;
-  /* takes rotation from bottom of hand, keeping it in center */
   transform-origin: bottom;
-  /* translateX moves the hand back 50%, making it straight with the 12*/
   transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
-  /* Making sure hands are always above numbers */
   z-index: 10;
 }
 
 .clock::after {
-  /* Creates 'pseduo content', which can be styled here in CSS*/
   content: "";
   position: absolute;
   background-color: black;
-  /* Ensure that this circle will be above hands on clock */
   z-index: 11;
   width: 15px;
   height: 15px;
-  /* Keep this center of clock */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* Make square into circle */
   border-radius: 50%;
 }
 
